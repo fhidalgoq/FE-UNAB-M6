@@ -4,8 +4,6 @@ import Table from './components/Table.vue';
 
 <template>
   <Table />
-  <Table />
-  <Table />
 </template>
 
 <style>

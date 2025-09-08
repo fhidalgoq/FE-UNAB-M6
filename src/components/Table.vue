@@ -1,54 +1,51 @@
 <script setup>
-import { ref } from 'vue';
-const personajes = ref([ 
-            { 
-                "id": "1", 
-                "nombre": "pikachu", 
-                "descripcion": "lorem ipsum uhiuhiuhihoi" 
-            }, 
-            { 
-                "id": "2", 
-                "nombre": "kakuna", 
-                "descripcion": "lorem ipsum uhiuhiuhihoi" 
-            }, 
-            { 
-                "id": "3", 
-                "nombre": "beedrill", 
-                "descripcion": "lorem ipsum uhiuhiuhihoi" 
-            }, 
-            { 
-                "id": "4", 
-                "nombre": "metapod", 
-                "descripcion": "lorem ipsum uhiuhiuhihoi" 
-            }, 
-            { 
-                "id": "5", 
-                "nombre": "rattata", 
-                "descripcion": "lorem ipsum uhiuhiuhihoi" 
-            },
-        ])
+import { ref } from 'vue'
+
+// Radio buttons
+const estudios = ref('universitarios')
+const opcionesEstudios = ['Basica', 'Media', 'Tecnica', 'Superior']
+
+// Select días de la semana
+const dias = [
+  'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'
+]
+const diaSeleccionado = ref('')
 </script>
 
 <template>
-<div class="container mt-4 p-4 border rounded shadow text-center">
-    <h1 class="mb-3 text-center">Tabla de Pokemon En Array</h1>
-    <table class="table table-bordered table-striped">
-      <thead class="table-dark">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Descripcion</th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr v-for="personaje in personajes" :key="personaje.id">
-        <td>{{ personaje.id }}</td>
-        <td>{{ personaje.nombre }}</td>
-        <td>{{ personaje.descripcion }}</td>
-      </tr>
-    </tbody>
-    </table>
+  <div class="container py-4">
+    <!-- Radios -->
+    <h2 class="mb-3">Tipo de estudios</h2>
+    <div class="form-check" v-for="opcion in opcionesEstudios" :key="opcion">
+      <input
+        class="form-check-input"
+        type="radio"
+        :id="opcion"
+        :value="opcion"
+        v-model="estudios"
+      />
+      <label class="form-check-label text-capitalize" :for="opcion">
+        {{ opcion }}
+      </label>
+    </div>
+    <div class="mt-2">
+      <span class="fw-bold">Seleccionado:</span> {{ opcionesEstudios.includes(estudios) ? estudios : 'Ninguno' }}
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- Select -->
+    <h2 class="mb-3">Día de la semana</h2>
+    <div class="mb-3">
+      <select v-model="diaSeleccionado" class="form-select">
+        <option disabled value="">Seleccione un día...</option>
+        <option v-for="dia in dias" :key="dia" :value="dia">
+          {{ dia }}
+        </option>
+      </select>
+    </div>
+    <div v-if="diaSeleccionado">
+      <span class="fw-bold">Día seleccionado:</span> {{ diaSeleccionado }}
+    </div>
   </div>
 </template>
-<style>
-</style>

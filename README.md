@@ -1,5 +1,38 @@
-# Vue 3 + Vite
+# Tabla de Pokémon — Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Aplicación mínima en Vue 3 creada con Vite que muestra una tabla con un listado estático de Pokémon. Usa Bootstrap 5 (vía CDN) para estilos.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Tecnologías
+- Vue 3
+- Vite
+- Bootstrap 5 (CDN en `index.html`)
+
+## Requisitos
+- Node.js 18+ y npm
+
+## Instalación y uso
+```bash
+npm install      # instala dependencias
+npm run dev      # arranca el servidor de desarrollo
+npm run build    # compila para producción en dist/
+npm run preview  # sirve el build localmente
+```
+
+Abre la URL que imprime Vite (por defecto `http://localhost:5173`).
+
+## Estructura principal
+- `index.html`: define el `div#app`, incluye Bootstrap por CDN y monta la app.
+- `src/main.js`: crea y monta la aplicación Vue.
+- `src/App.vue`: componente raíz que renderiza `TablePokemon`.
+- `src/components/TablePokemon.vue`: tabla con los datos de ejemplo (array reactivo `personajes`).
+
+## Personalización rápida
+- Edita el arreglo `personajes` en `src/components/TablePokemon.vue` para cambiar filas.
+- Para agregar columnas, añade nuevas propiedades a cada objeto y nuevas celdas en la tabla.
+
+## Notas
+- Componentes con `<script setup>` en `App.vue` y `TablePokemon.vue`.
+- Bootstrap se carga desde CDN; si prefieres empaquetarlo, instálalo por npm e impórtalo en tus estilos.
+
+## Licencia
+Uso educativo.

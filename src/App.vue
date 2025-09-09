@@ -1,9 +1,9 @@
 <script setup>
-import Table from './components/Table.vue';
+import TablePokemon from './components/TablePokemon.vue';
 </script>
 
 <template>
-  <Table />
+  <TablePokemon />
 </template>
 
 <style>

@@ -1,11 +1,9 @@
 <script setup>
 import { ref } from 'vue'
 
-// Radio buttons
 const estudios = ref('')
 const opcionesEstudios = ['Basica', 'Media', 'Tecnica', 'Superior']
 
-// Select días de la semana
 const dias = [
   'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'
 ]
@@ -15,7 +13,6 @@ const diaSeleccionado = ref('')
 <template>
   <div class="container py-4">
     <div class="row g-4">
-      <!-- Columna izquierda: Radios -->
       <div class="col-md-6">
         <div class="p-3 border rounded shadow-sm bg-light">
           <h4 class="mb-3 text-primary">Tipo de estudios</h4>

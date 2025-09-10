@@ -1,9 +1,9 @@
 <script setup>
-import Table from './components/Table.vue';
+import Binding from './components/Binding.vue';
 </script>
 
 <template>
-  <Table />
+  <Binding />
 </template>
 
 <style>

@@ -18,7 +18,7 @@ npm run build    # compila para producción en dist/
 npm run preview  # sirve el build localmente
 ```
 
-Abre la URL que imprime Vite (por defecto `http://localhost:5173`).
+Abre la URL que imprime Vite.
 
 ## Estructura principal
 - `index.html`: define el `div#app`, incluye Bootstrap por CDN y monta la app.
@@ -34,5 +34,5 @@ Abre la URL que imprime Vite (por defecto `http://localhost:5173`).
 - Componentes con `<script setup>` en `App.vue` y `TablePokemon.vue`.
 - Bootstrap se carga desde CDN; si prefieres empaquetarlo, instálalo por npm e impórtalo en tus estilos.
 
-## Licencia
-Uso educativo.
+## Autor
+- Francisco Hidalgo Quezada

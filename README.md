@@ -29,5 +29,5 @@ Una vez en desarrollo, abre la URL que imprime Vite.
 ## Personalización rápida
 Para cambiar los datos que se muestran en la tabla, edita el arreglo `personas` dentro de `src/components/Table.vue`.
 
-## Creador
+## Autor
 Francisco Hidalgo Quezada

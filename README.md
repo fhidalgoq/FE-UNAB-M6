@@ -1,38 +1,44 @@
-# Tabla de Pokémon — Vue 3 + Vite
+# Tabla de Pokemon - Vue 3 + Vite
 
-Aplicación mínima en Vue 3 creada con Vite que muestra una tabla con un listado estático de Pokémon. Usa Bootstrap 5 (vía CDN) para estilos.
+Aplicacion creada con Vue 3 y Vite que renderiza una tabla con un listado estatico de Pokemon. La interfaz usa Bootstrap 5 a traves de CDN y ofrece un buscador en tiempo real para filtrar por nombre.
 
-## Tecnologías
-- Vue 3
-- Vite
-- Bootstrap 5 (CDN en `index.html`)
+## Caracteristicas
+- Filtro reactivo por nombre usando la Composition API (`ref` y `computed`).
+- Tabla con estilos listos mediante Bootstrap 5 incluido en `index.html`.
+- Datos iniciales en memoria, faciles de extender o reemplazar por una fuente externa.
 
 ## Requisitos
-- Node.js 18+ y npm
+- Node.js 18 o superior.
+- npm (se instala junto con Node.js).
 
-## Instalación y uso
+## Puesta en marcha
 ```bash
 npm install      # instala dependencias
-npm run dev      # arranca el servidor de desarrollo
-npm run build    # compila para producción en dist/
-npm run preview  # sirve el build localmente
+npm run dev      # arranca el servidor de desarrollo en modo hot-reload
+npm run build    # genera la version optimizada en dist/
+npm run preview  # sirve la build para verificarla en local
 ```
 
-Abre la URL que imprime Vite.
+Cuando `npm run dev` este activo, visita la URL que muestra la terminal (por defecto http://localhost:5173).
 
-## Estructura principal
-- `index.html`: define el `div#app`, incluye Bootstrap por CDN y monta la app.
-- `src/main.js`: crea y monta la aplicación Vue.
-- `src/App.vue`: componente raíz que renderiza `TablePokemon`.
-- `src/components/TablePokemon.vue`: tabla con los datos de ejemplo (array reactivo `personajes`).
+## Estructura del proyecto
+```
+.
+|-- index.html                # Punto de entrada, inyecta Bootstrap por CDN
+|-- src/
+|   |-- main.js               # Crea la app de Vue y la monta en #app
+|   |-- App.vue               # Componente raiz; renderiza TablePokemon
+|   `-- components/
+|       `-- TablePokemon.vue  # Tabla y logica de busqueda
+`-- vite.config.js            # Configuracion de Vite (por defecto)
+```
 
-## Personalización rápida
-- Edita el arreglo `personajes` en `src/components/TablePokemon.vue` para cambiar filas.
-- Para agregar columnas, añade nuevas propiedades a cada objeto y nuevas celdas en la tabla.
+## Personalizacion rapida
+- Reemplaza el arreglo `personajes` en `src/components/TablePokemon.vue` para cambiar los datos.
+- Agrega nuevas columnas anadiendo propiedades a cada objeto y celdas adicionales en la tabla.
+- Si necesitas estilos propios, agrega reglas en la seccion `<style>` de los componentes o incorpora un CSS global.
 
-## Notas
-- Componentes con `<script setup>` en `App.vue` y `TablePokemon.vue`.
-- Bootstrap se carga desde CDN; si prefieres empaquetarlo, instálalo por npm e impórtalo en tus estilos.
-
-## Autor
-- Francisco Hidalgo Quezada
+## Ideas para seguir
+- Consumir una API (por ejemplo, PokeAPI) y poblar la tabla dinamicamente.
+- Anadir paginacion, ordenamiento o conteos de resultados.
+- Internacionalizar la interfaz y los mensajes segun tus necesidades.
